@@ -7,4 +7,4 @@ spring:
         bootstrap-servers: localhost:9092
         key-serializer: org.apache.kafka.common.serialization.StringSerializer
         value-serializer: rafael.alcocer.caldera.serializer.CustomSerializer
-        topic-name: rac-topic
+        topic-name: generic-topic

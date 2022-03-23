@@ -18,16 +18,14 @@ package rafael.alcocer.caldera.service;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
 import net.sf.json.JSONObject;
 
+@RequiredArgsConstructor
 @Service
 public class KafkaProducerServiceImpl implements KafkaProducerService {
 
     private final KafkaTemplate<String, JSONObject> kafkaTemplate;
-
-    public KafkaProducerServiceImpl(KafkaTemplate<String, JSONObject> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
 
     @Override
     public void sendMessage(String topicName, JSONObject json) {

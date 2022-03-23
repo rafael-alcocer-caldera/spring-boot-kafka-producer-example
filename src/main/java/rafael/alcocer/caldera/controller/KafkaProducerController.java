@@ -21,18 +21,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.RequiredArgsConstructor;
 import rafael.alcocer.caldera.model.Model;
 import rafael.alcocer.caldera.service.KafkaProducerService;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/kafka")
 public class KafkaProducerController {
 
     private final KafkaProducerService kafkaProducerService;
-
-    public KafkaProducerController(KafkaProducerService kafkaProducerService) {
-        this.kafkaProducerService = kafkaProducerService;
-    }
 
     @PostMapping("/producer")
     @ResponseBody
